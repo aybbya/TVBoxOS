@@ -34,7 +34,7 @@ jobs:
       - uses: android-actions/setup-android@v3
         with:
           api-level: 34
-          ndk-version: 25.2.9519653
+          ndk-version: 27.2.12479018
        # 安装 Python 3.8
       - name: Install Python 3.8
         run: |
