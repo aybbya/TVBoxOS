@@ -50,7 +50,11 @@ jobs:
         run: |
           which python3.8 || echo "Python 3.8 not found"
           which python3   || echo "Python 3 not found"
-        
+        # 修复 Pip 和依赖
+      - name: Fix pip and dependencies
+        run: |
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install --force-reinstall urllib3==1.26.2 six==1.16.0  
       - name: Check New Commit
         run: |
           upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
