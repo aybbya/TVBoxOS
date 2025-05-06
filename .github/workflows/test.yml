@@ -29,6 +29,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: android-actions/setup-android@v3
+        with:
+          api-level: 34
+          ndk-version: 25.2.9519653
+      - name: Create local.properties
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties
       - name: Check New Commit
         run: |
           upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
