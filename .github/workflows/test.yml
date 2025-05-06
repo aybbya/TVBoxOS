@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties
-          echo "buildPython=\"/usr/bin/python3.8\"" >> local.properties
+          echo "buildPython=\"/usr/bin/python3\"" >> local.properties
   # 验证 Python 路径
       - name: Check Python path
         run: |
