@@ -41,8 +41,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3.8
           sudo apt-get install -y python3-pip
-          python3 -m pip uninstall urllib3 six -y
-          python3 -m pip install --no-cache-dir -U urllib3 six
+          sudo dpkg --remove --force-remove-reinstreq python3-urllib3 
+          python3 -m pip install --no-cache-dir urllib3==1.26.21
       - name: Create local.properties
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
