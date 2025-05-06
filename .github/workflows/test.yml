@@ -62,7 +62,7 @@ jobs:
           # 创建虚拟环境（推荐）
           python3 -m venv myenv
           source myenv/bin/activate
-          pip install urllib3==1.26.21 six==1.16.0
+          pip install urllib3==1.26.20 six==1.16.0
           python3 -c "import urllib3; import six; print('urllib3:', urllib3.__version__); print('six:', six.__version__)"
       - name: Check New Commit
         run: |
