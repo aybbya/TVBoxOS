@@ -56,6 +56,9 @@ jobs:
           sudo apt-get install -y python3.8-dev build-essential
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install --force-reinstall urllib3==1.26.2 six==1.16.0
+      - name: Check installed versions
+        run: |
+          python3 -c "import urllib3; import six; print('urllib3:', urllib3.__version__); print('six:', six.__version__)"
       - name: Check New Commit
         run: |
           upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
