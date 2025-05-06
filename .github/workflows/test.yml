@@ -40,6 +40,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y python3.8
+          sudo apt-get install -y python3-pip
       - name: Create local.properties
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
@@ -50,16 +51,11 @@ jobs:
         run: |
           which python3.8 || echo "Python 3.8 not found"
           which python3   || echo "Python 3 not found"
-       # 修复 Pip 安装
-      - name: Reinstall pip
-        run: |
-          python3 -m ensurepip --upgrade
-          python3 -m pip install --force-reinstall pip
 
       # 安装兼容的依赖库
       - name: Install dependencies
         run: |
-          python3 -m pip install urllib3==1.26.2 six==1.16.0
+          pip3 install urllib3==1.26.2
           
       - name: Check installed versions
         run: |
