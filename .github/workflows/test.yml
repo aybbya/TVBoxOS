@@ -59,8 +59,9 @@ jobs:
           
       - name: Install system dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-urllib3=1.26.15-1ubuntu1  # 锁定系统包版本
+          wget http://archive.ubuntu.com/ubuntu/pool/main/p/python3-urllib3/python3-urllib3_1.26.15-1ubuntu1_amd64.deb
+          sudo dpkg -i python3-urllib3_1.26.15-1ubuntu1_amd64.deb
+          sudo apt-get -f install  # 修复依赖
 
       - name: Install Python dependencies
         run: |
